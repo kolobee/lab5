@@ -18,7 +18,7 @@ namespace calcul
             Console.WriteLine("Введите второе число:");
             double num2 = double.Parse(Console.ReadLine());
 
-            Console.WriteLine("Выберете операцию (+, -, *, /):");
+            Console.WriteLine("Выберете операцию (+, -, *, /, ^):");
             char OP = char.Parse(Console.ReadLine());
 
             double result = 0;
@@ -35,7 +35,12 @@ namespace calcul
                     result = num1 * num2;
                     break;
                 case '/':
-                    result = num1 * num2;
+                    if (num2 != 0)
+                        result = num1 * num2;
+                    else Console.WriteLine("Делитель не может быть 0!");
+                    break;
+                case '^':
+                    result = Math.Pow(num1, num2);
                     break;
 
                 default:
